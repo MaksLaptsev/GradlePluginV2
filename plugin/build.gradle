@@ -31,3 +31,8 @@ gradlePlugin {
         }
     }
 }
+
+tasks.register('publishToMavenLocalProxy') {
+    dependsOn(publishToMavenLocal)
+    group("gradle plugin homework")
+}
