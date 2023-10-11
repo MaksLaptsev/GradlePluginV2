@@ -30,6 +30,7 @@ public class GitTagNew extends DefaultTask {
             Runtime.getRuntime().exec(Commands.COMMAND_CREATE_TAG+newTag);
             System.out.println("new created tag: "+newTag);
             Runtime.getRuntime().exec(Commands.COMMAND_PUSH_TAG+newTag);
+            System.out.println("tag: "+newTag+" push: successful");
         }catch (TaggedException | IOException e){
             System.out.println(e.getMessage());
         }

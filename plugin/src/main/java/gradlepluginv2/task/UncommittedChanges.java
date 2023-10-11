@@ -30,7 +30,11 @@ public class UncommittedChanges extends DefaultTask {
                 this.getExtensions().add("result",true);
                 String uncommittedTag = TagUtils.createUncommittedTag(out(Commands.COMMAND_UNCOMM_TAG));
                 throw new UncommittedException("There are uncommitted changes\n"+uncommittedTag);
-            }else this.getExtensions().add("result",false);
+            }else
+            {
+                this.getExtensions().add("result",false);
+                System.out.println("Has uncommitted changes: "+false);
+            }
         }catch (UncommittedException | IOException e){
             System.out.println(e.getMessage());
         }

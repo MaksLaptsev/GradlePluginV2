@@ -26,7 +26,7 @@ public class GitTagCurrent extends DefaultTask {
 
             if (isTagExist){
                 throw new TaggedException("The tag already exists on the current commit!!");
-            }
+            }else System.out.println("Is current tag exist: "+ false);
         }catch (TaggedException | IOException e){
             System.out.println(e.getMessage());
         }

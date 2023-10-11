@@ -22,6 +22,7 @@ public class GitDirectory extends DefaultTask {
             isGitDir = Boolean.parseBoolean(out(Commands.COMMAND_IS_GIT_DIRECT)
                     .replace("\n", "").split(" ")[0]);
             this.getExtensions().add("result", isGitDir);
+            System.out.println("Is git directory: "+isGitDir);
             if (!isGitDir){
                 throw new GitNotFoundException("Is not a Git directory!!");
             }
